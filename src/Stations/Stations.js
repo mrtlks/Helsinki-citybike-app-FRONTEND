@@ -6,7 +6,8 @@ import Box from '@mui/material/Box';
 import TextField from "@mui/material/TextField";
 import SecondaryPagesInfo from '../Components/SecondaryPagesInfo';
 import Footer from '../Components/Footer';
-
+import Pagination from 'jt-react-pagination';
+import StationInfo from './StationInfo';
 
 
 export default function DemoStations() {
@@ -53,17 +54,14 @@ export default function DemoStations() {
     console.log(inputText)
   };
 
-  // 3.b Katsotaan sisältääkö minkään aseman nimi kyseisiä merkkejä annetussa
-  // järjestyksessä
+  // 3.b Katsotaan sisältääkö minkään aseman nimi kyseisiä merkkejä annetussa järjestyksessä
   const filteredData = stations.filter(stations => {
 
     if (inputText.length === 0) {
-
       return stations;
     }
     //palautetaan aseman/asemien nimet jotka sisältävät käyttäjän syötteen
     else {
-
       return stations.station_name.includes(inputText)
     }
   })
@@ -81,12 +79,12 @@ export default function DemoStations() {
     description:
       "Here you can find detailed information about HSL city bike stations.",
     image: 'https://source.unsplash.com/random/?citybike',
-
   };
 
 
   return (
     <div>
+
       <SecondaryPagesInfo info={secondaryPagesInfo} />
 
       <Box
@@ -107,23 +105,31 @@ export default function DemoStations() {
         />
       </Box>
 
+      <Pagination
+        prevText='<'
+        nextText='>'
+        pageNeighbours={2}
+        itemPerPage={3}>
 
-      {filteredData.map((station, i) => {
-        return (
+        {filteredData.map((station, i) => {
+          return (
 
-          <Grid
-            item key={i}>
-            <Item>
-              {station.station_name}
-            </Item>
-          </Grid>
-        )
-      })}
+            <Grid
+              item key={i}>
+              <Item>
+            <StationInfo station={station}/>
+
+              </Item>
+            </Grid>
+          )
+        })}
+      </Pagination>
 
       <Footer
         title="Helsinki City Bike app"
         description="Offering city bike info since 2023"
       />
+
     </div>
   );
 }
