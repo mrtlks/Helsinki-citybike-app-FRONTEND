@@ -21,11 +21,11 @@ function MainInfo(props) {
         backgroundPosition: 'center',
         backgroundImage: `url(${info.image})`,
         marginTop: '30px',
-        marginBottom:'40px'
-        
+        marginBottom: '40px'
+
       }}
     >
-      
+
       {/* Increase the priority of the hero background image 
       Tämä tummentaa kuvaa */}
       {<img style={{ display: 'none' }} src={info.image} alt={info.imageText} />}
@@ -37,36 +37,36 @@ function MainInfo(props) {
           right: 0,
           left: 0,
           backgroundColor: 'rgba(0,0,0,.1)',
-          
+
         }}
-        
+
       />
 
-            {/* Tämä on kuvan kehykselle */}
+      {/* Tämä on kuvan kehykselle */}
       <Grid container>
         <Grid item md={6}>
 
-    {/*    https://mui.com/system/getting-started/the-sx-prop/ */}
+          {/*  https://mui.com/system/getting-started/the-sx-prop/ */}
           <Box
             sx={{
               position: 'relative',
               p: { xs: 3, md: 6 },
               pr: { md: 0 },
               height: 600,
-            
+
             }}
           >
-             {/* Etusivun info-kuvan otsikko */}
+            {/* Etusivun info-kuvan otsikko */}
             <Typography component="h1" variant="h3" color="inherit" gutterBottom>
               {info.title}
             </Typography>
 
-        {/* Etusivun info-kuvan teksti */}
+            {/* Etusivun info-kuvan teksti */}
             <Typography variant="h5" color="inherit" paragraph>
               {info.description}
             </Typography>
 
-            
+
             <Link variant="subtitle1" href="#">
               {info.linkText}
             </Link>
@@ -80,7 +80,7 @@ function MainInfo(props) {
 MainInfo.propTypes = {
   info: PropTypes.shape({
     description: PropTypes.string.isRequired,
-    
+
     imageText: PropTypes.string.isRequired,
     linkText: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
