@@ -9,6 +9,9 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+
 
 
 
@@ -17,8 +20,8 @@ export default function Journeys() {
   const [journeys, setJourneys] = useState([]);
   const url = 'http://localhost:8080/api/journeys'
 
-  useEffect(() => fetchData(), []);
 
+  useEffect(() => fetchData(), []);
 
   // haetaan kaikki asemat ----------tämä koodi noutaa datan ---------
   const fetchData = () => {
@@ -28,9 +31,10 @@ export default function Journeys() {
         setJourneys(data);
       }
       )
-      .catch(err => console.log(err));
+      .catch(err => console.log(err));  
   }
 
+  
   // Journeys-datan esittämiseen käytetään react mui:n kustomoitua taulukkoa (Table) _____________
   //https://mui.com/material-ui/react-table/
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -53,32 +57,120 @@ export default function Journeys() {
     },
   }));
 
-//_________________________________________________________________________________________________
-
+  //________________________________________________________________________________________________
 
   const secondaryPagesInfo = {
     title: 'Journeys',
     description:
-      "Here you can find detailed information about the journeys made with citybikes. You can also add your own journey",
+      "Here you can find detailed information about the journeys made with citybikes. Journeys can be filttered by Departure Station, Return Station, Covered Distance and Journey Duration.",
     image: 'https://source.unsplash.com/random/?citybike',
   };
 
 
+
+  // DATA TABLE ----  SORTING  ____________________________________________________________________
+
+  const sortByDepartureStation = () => {
+
+    //luodaan kopio journeys-objektista
+    const sortedJourneys = [...journeys];
+    // muokataan kopiota
+    sortedJourneys.sort((a, b) => {
+      return a.departureStationName > b.departureStationName ? 1 : -1;
+    });
+
+    console.log('testi sortByDepartureStation:')
+    console.log(sortedJourneys);
+
+    return setJourneys(sortedJourneys);
+  }
+
+  const sortByReturnStation = () => {
+    const sortedJourneys = [...journeys];
+    sortedJourneys.sort((a, b) => {
+      return a.returnStationName > b.returnStationName ? 1 : -1;
+    });
+    return setJourneys(sortedJourneys);
+  }
+
+  const shortestDistance = () => {
+    const sortedJourneys = [...journeys];
+    sortedJourneys.sort((a, b) => {
+      return a.coveredDistance < b.coveredDistance ? 1 : -1;
+    });
+    return setJourneys(sortedJourneys);
+  }
+
+  const longestDistance = () => {
+    const sortedJourneys = [...journeys];
+    sortedJourneys.sort((a, b) => {
+      return a.coveredDistance > b.coveredDistance ? 1 : -1;
+    });
+    return setJourneys(sortedJourneys);
+  }
+
+  const shortestDuration = () => {
+    const sortedJourneys = [...journeys];
+    sortedJourneys.sort((a, b) => {
+      return a.duration < b.duration ? 1 : -1;
+    });
+    return setJourneys(sortedJourneys);
+  }
+  
+  const longestDuration = () => {
+    const sortedJourneys = [...journeys];
+    sortedJourneys.sort((a, b) => {
+      return a.duration > b.duration ? 1 : -1;
+    });
+    return setJourneys(sortedJourneys);
+  }
+
+  console.log('testi2')
+  console.log(journeys)
 
 
   return (
     <div>
       < SecondaryPagesInfo info={secondaryPagesInfo} />
 
+
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Departure Station</StyledTableCell>
-              <StyledTableCell align="right">Return Station</StyledTableCell>
-              <StyledTableCell align="right">Covered distance </StyledTableCell>
-              <StyledTableCell align="right">Journey Duration</StyledTableCell>
+              <StyledTableCell onClick={sortByDepartureStation}> Departure Station</StyledTableCell>
+              <StyledTableCell onClick={sortByReturnStation} align="right">Return Station</StyledTableCell>
+              <StyledTableCell align="right">Covered distance
+                <Select sx={{
+                  height: '2.5rem',
+                  color: 'white',
+                  '& .MuiSvgIcon-root': {
+                    color: 'white'
+                  }
+                }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                >
+                  <MenuItem onClick={shortestDistance}>Longest</MenuItem>
+                  <MenuItem onClick={longestDistance} >Shortest</MenuItem>
+                </Select>
+              </StyledTableCell>
 
+              <StyledTableCell align="right">Journey Duration
+                <Select sx={{
+                  height: '2.5rem',
+                  color: 'white',
+                  '& .MuiSvgIcon-root': {
+                    color: 'white'
+                  }
+                }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                >
+                  <MenuItem onClick={shortestDuration} >Longest</MenuItem>
+                  <MenuItem onClick={longestDuration} >Shortest</MenuItem>
+                </Select>
+              </StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -106,20 +198,19 @@ export default function Journeys() {
               const seconds = totalSeconds % 60;
 
               return (
-                <StyledTableRow key={journey.departureStationName}>
+                <StyledTableRow key={i}>
                   <StyledTableCell component="th" scope="row">
                     {journey.departureStationName}
                   </StyledTableCell>
                   <StyledTableCell align="right">{journey.returnStationName}</StyledTableCell>
                   <StyledTableCell align="right">{coveredDistanceKilometers} km</StyledTableCell>
-                  <StyledTableCell align="right">{minutes}min  {seconds}sec </StyledTableCell>               
+                  <StyledTableCell align="right">{minutes}min  {seconds}sec </StyledTableCell>
                 </StyledTableRow>
               )
             })}
           </TableBody>
         </Table>
       </TableContainer>
-    
 
       <Footer
         title="Helsinki City Bike app"
