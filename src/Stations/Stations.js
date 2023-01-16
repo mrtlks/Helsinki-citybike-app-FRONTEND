@@ -16,6 +16,7 @@ export default function DemoStations() {
   const [stations, setStations] = useState([]);
   const [inputText, setInputText] = useState("");
 
+
   useEffect(() => fetchData(), []);
 
   const url = 'http://localhost:8080/api/stations'
@@ -78,7 +79,7 @@ export default function DemoStations() {
     title: 'Stations',
     description:
       "Here you can find detailed information about HSL city bike stations.",
-    image: 'https://source.unsplash.com/random/?citybike',
+    image: 'https://source.unsplash.com/random/?citybike'
   };
 
 

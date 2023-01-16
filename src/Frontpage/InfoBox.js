@@ -6,13 +6,14 @@ import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import { Link } from 'react-router-dom'
 
 function Infobox(props) {
   const { info } = props;
-
+  
   return (
     <Grid item xs={12} md={6}>
-      <CardActionArea component="a" href="#">
+      <CardActionArea component={Link} to={`/${info.link}`} >
         <Card sx={{ display: 'flex', height: 250}}>
           <CardContent sx={{ flex: 10 }}>
             <Typography component="h2" variant="h5">

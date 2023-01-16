@@ -10,7 +10,7 @@ export default function Frontpage() {
 
   const image1 = require('./images/station.jpg');
   const image2 = require('./images/city_center.jpg');
-
+  const image3 = require('./images/balloons.jpg');
 
 
   const frontpageMainInfo = {
@@ -25,6 +25,7 @@ export default function Frontpage() {
   const infoBoxes = [
     {
       title: 'Stations',
+      link: 'stations',
       description:
         'Detailed information about HSL city bike stations including names and locations',
       image: image1,
@@ -32,9 +33,18 @@ export default function Frontpage() {
     },
     {
       title: 'Journeys',
+      link: 'journeys',
       description:
         'Journey data',
       image: image2,
+      imageLabel: 'Image Text',
+    },
+    {
+      title: 'User Experiences',
+      link: 'userexperiences',
+      description:
+        'Read user experiences and reviews.',
+      image: image3,
       imageLabel: 'Image Text',
     },
   ];
