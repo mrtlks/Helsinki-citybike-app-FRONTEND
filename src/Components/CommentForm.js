@@ -79,6 +79,7 @@ function CommentForm() {
       <div className="form-container">
         <Container maxWidth="sm">
           <Typography variant="h6" >
+            <br></br>
             Write your comment here and rate the experience with Helsinki City Bike! </Typography>
           <Box
             sx={{

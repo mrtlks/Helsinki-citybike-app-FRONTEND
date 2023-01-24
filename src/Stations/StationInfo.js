@@ -3,7 +3,7 @@ import { Button, Dialog, DialogTitle } from "@mui/material";
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-
+import { GoogleMap, MarkerF, useJsApiLoader } from '@react-google-maps/api';
 
 export default function StationInfo(props) {
 
@@ -13,7 +13,18 @@ export default function StationInfo(props) {
   const [journeys, setJourneys] = useState([]);
   const url_journeys = 'http://localhost:8080/api/journeys'
 
+
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: '"xxxxxxx"',
+  });
+
+  const containerStyle = {
+    width: '400px',
+    height: '400px'
+  };
+
   useEffect(() => fetchData(), [],);
+
 
   // haetaan kaikki matkat ----------tämä koodi noutaa datan ---------
   const fetchData = () => {
@@ -34,18 +45,20 @@ export default function StationInfo(props) {
   // suoraan tehdä filtteröinti alla olevalla tavalla
 
   const filtered_journeys_departureStation = journeys.filter(journey => {
-    return journey.departureStationName === station.station_name;
+    return journey.departureStationName === station.name;
   });
 
   const filtered_journeys_returnStation = journeys.filter(journey => {
-    return journey.returnStationName === station.station_name;
+    return journey.returnStationName === station.name;
   });
+
 
   // objektilistan itemit on helppo laskea length-funktiolla   
 
   const departureStation_amount = filtered_journeys_departureStation.length
 
   const returnStation_amount = filtered_journeys_returnStation.length
+
 
   // avataan ikkuna  ------------------------------------
   const showInfo = () => {
@@ -62,7 +75,7 @@ export default function StationInfo(props) {
   return (
     <div>
 
-      <Button onClick={() => showInfo()}> <b> {station.station_name} </b> </Button>
+      <Button onClick={() => showInfo()}> <b> {station.name} </b> </Button>
 
       <Dialog
         open={open}
@@ -72,7 +85,7 @@ export default function StationInfo(props) {
       >
 
         <DialogTitle id="alert-dialog-title">
-          The name of the station: {station.station_name}
+          The name of the station: {station.name}
 
         </DialogTitle>
 
@@ -84,11 +97,21 @@ export default function StationInfo(props) {
             Coordinates:<br />
             <b>x:  {station.x} </b>  <br />
             <b>y: {station.y} </b>  <br /> <br />
-            Total number of journeys starting from the station:  <b>  {departureStation_amount} </b>  <br />
-            Total number of journeys ending at the station:  <b>  {returnStation_amount}  </b>  <br />
+            <li> Total number of journeys starting from the station:  <b>  {departureStation_amount} </b>  </li>
+            <li>  Total number of journeys ending at the station:  <b>  {returnStation_amount}  </b></li>  <br />
 
+            Station location on a map:
           </DialogContentText>
 
+
+          {isLoaded && <GoogleMap
+          //  googleMapsApiKey="xxxxxxx"
+            mapContainerStyle={containerStyle}
+            center={{ lat: Number(station.y), lng: Number(station.x) }}
+            zoom={14}
+          >
+            <MarkerF position={{ lat: Number(station.y), lng: Number(station.x) }} />
+          </GoogleMap>}
         </DialogContent>
         <DialogActions>
 

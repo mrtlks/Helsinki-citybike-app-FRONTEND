@@ -4,13 +4,14 @@ import Container from '@mui/material/Container';
 import MainInfo from './MainInfo';
 import InfoBox from './InfoBox';
 import Footer from '../Components/Footer';
-
+import StationsOnAMap from '../Components/StationsOnAMap';
 
 export default function Frontpage() {
 
   const image1 = require('./images/station.jpg');
   const image2 = require('./images/city_center.jpg');
   const image3 = require('./images/balloons.jpg');
+  const image4 = require('./images/map.png');
 
 
   const frontpageMainInfo = {
@@ -47,9 +48,22 @@ export default function Frontpage() {
       image: image3,
       imageLabel: 'Image Text',
     },
+    {
+      title: 'Maps',
+      description:
+        'Check out all the maps',
+      image: image4,
+      imageLabel: 'Image Text',
+    },
   ];
 
-
+  const stationsOnAMap = {
+    title: 'All Stations on a map. Make your search!',
+    description:
+      "Check out all available HSL citybike stations and plan your cycling route! Using a bike could not be easier.",
+    image: 'https://source.unsplash.com/random/?bike',
+    linkText: 'Continue reading…',
+  };
 
   return (
 
@@ -63,11 +77,20 @@ export default function Frontpage() {
             <InfoBox key={info.title} info={info} />
           ))}
         </Grid>
+
+        <StationsOnAMap info={stationsOnAMap} />
+
+
         {/* Footerin tekstit --> */}
+
         <Footer
           title="Helsinki City Bike app"
           description="Offering city bike info since 2023"
         />
+
+
+
+
       </main>
     </Container>
 
