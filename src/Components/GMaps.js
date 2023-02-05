@@ -18,7 +18,7 @@ function GMaps(props) {
 
 
   const {isLoaded } =useJsApiLoader({
-    googleMapsApiKey: "xxxxxxx"
+    googleMapsApiKey: "APIKEY"
    });
 
 console.log("data")

@@ -18,7 +18,7 @@ import MenuItem from '@mui/material/MenuItem';
 export default function Journeys() {
 
   const [journeys, setJourneys] = useState([]);
-  const url = 'http://localhost:8080/api/journeys'
+  const url = 'https://helsinki-city-bike-app-backend.herokuapp.com/api/journeys'
 
 
   useEffect(() => fetchData(), []);
@@ -28,7 +28,7 @@ export default function Journeys() {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        setJourneys(data);
+        setJourneys(data.content);
       }
       )
       .catch(err => console.log(err));  

@@ -6,6 +6,8 @@ import Stations from "./Stations/Stations";
 import Journeys from "./Journeys/Journeys";
 import UserExperiences from "./UserExperiences/UserExperiences";
 
+
+
 function App() {
 
   return (
@@ -16,9 +18,8 @@ function App() {
         <Route path="/stations" exact element={<Stations />} />
         <Route path="/journeys" exact element={<Journeys />} />
           <Route path="/journeys" exact element={<Journeys />} />
-          <Route path="/userexperiences" exact element={<UserExperiences />} />
+          <Route path="/userexperiences" exact element={<UserExperiences />} />     
       </Routes>
-
     </BrowserRouter>
   );
 }

@@ -37,7 +37,10 @@
   }
 }
 
+.Pagination{
+  width: 100%;
 
+}
 
 .form-container {
   width: 100%;
@@ -45,5 +48,5 @@
   margin: auto;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   padding: 10px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ 
 }

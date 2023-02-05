@@ -26,7 +26,7 @@ export default function UserExperiences() {
 
   useEffect(() => fetchData(), []);
 
-  const url = 'http://localhost:8080/api/comments'
+  const url = 'https://helsinki-city-bike-app-backend.herokuapp.com/api/comments'
 
   const fetchData = () => {
     fetch(url)
@@ -90,6 +90,4 @@ export default function UserExperiences() {
       />
     </div>
   );
-}
-
-
+            }

@@ -12,26 +12,11 @@ import Rating from '@mui/material/Rating';
 function CommentForm() {
 
 
-  const [comments, setComments] = useState([])
+
   //const [open, setOpen] = useState(false)
   const [comment_text, setComment] = useState('');
   const [nickname, setNickname] = useState('');
   const [stars, setStars] = React.useState(0);
-
-  useEffect(() => fetchData(), []);
-
-
-  const url = 'http://localhost:8080/api/comments'
-
-  const fetchData = () => {
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        setComments(data);
-      }
-      )
-      .catch(err => console.log(err));
-  }
 
 
   //Tehdään POST-pyyntö 
@@ -45,7 +30,7 @@ function CommentForm() {
       stars: stars
     };
 
-    axios.post('http://localhost:8080/api/comments', obj)
+    axios.post('https://helsinki-city-bike-app-backend.herokuapp.com/api/comments', obj)
       .then(response => {
         console.log(response)
         console.log('success!')
@@ -79,7 +64,6 @@ function CommentForm() {
       <div className="form-container">
         <Container maxWidth="sm">
           <Typography variant="h6" >
-            <br></br>
             Write your comment here and rate the experience with Helsinki City Bike! </Typography>
           <Box
             sx={{

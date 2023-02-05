@@ -11,11 +11,11 @@ export default function StationInfo(props) {
   const [station] = useState(props.station)
   const [open, setOpen] = useState(false)
   const [journeys, setJourneys] = useState([]);
-  const url_journeys = 'http://localhost:8080/api/journeys'
+  const url_journeys = 'https://helsinki-city-bike-app-backend.herokuapp.com/api/journeys'
 
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: '"xxxxxxx"',
+    googleMapsApiKey: 'AIzaSyCe9oQB1rKkat68AvLrvgqQ1K4c4Y7H14g',
   });
 
   const containerStyle = {
@@ -93,7 +93,7 @@ export default function StationInfo(props) {
 
           <DialogContentText id="alert-dialog-description">
             Address: <br />
-            <b> {station.station_address}</b><br /> <br />
+            <b> {station.address}</b><br /> <br />
             Coordinates:<br />
             <b>x:  {station.x} </b>  <br />
             <b>y: {station.y} </b>  <br /> <br />
@@ -105,7 +105,7 @@ export default function StationInfo(props) {
 
 
           {isLoaded && <GoogleMap
-          //  googleMapsApiKey="xxxxxxx"
+          //  googleMapsApiKey="xxxxxxxxxxxxxxxxxxx"
             mapContainerStyle={containerStyle}
             center={{ lat: Number(station.y), lng: Number(station.x) }}
             zoom={14}
