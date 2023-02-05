@@ -18,9 +18,9 @@ import MenuItem from '@mui/material/MenuItem';
 export default function Journeys() {
 
   const [journeys, setJourneys] = useState([]);
-  const url = 'https://helsinki-city-bike-app-backend.herokuapp.com/api/journeys'
+  const url = 'http://localhost:8080/api/journeys'
 
-
+  //https://helsinki-city-bike-app-backend.herokuapp.com/api/journeys
   useEffect(() => fetchData(), []);
 
   // haetaan kaikki asemat ----------tämä koodi noutaa datan ---------

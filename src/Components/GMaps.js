@@ -16,11 +16,12 @@ function GMaps(props) {
     position: 'relative'
   };
 
-  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+ // const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: {API_KEY},
   });
+  //console.log("API", API_KEY)
   
 console.log("data")
  console.log(data)
