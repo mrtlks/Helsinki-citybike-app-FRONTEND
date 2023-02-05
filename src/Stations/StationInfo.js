@@ -11,12 +11,14 @@ export default function StationInfo(props) {
   const [station] = useState(props.station)
   const [open, setOpen] = useState(false)
   const [journeys, setJourneys] = useState([]);
-  const url_journeys = 'http://localhost:8080/journeys'
+  const url_journeys = 'http://localhost:8080/api/journeys'
 
- // const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+
+
+  const API_KEY = process.env.REACT_APP_API_KEY;
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: {API_KEY},
+    googleMapsApiKey: API_KEY
   });
 
   const containerStyle = {
@@ -32,7 +34,7 @@ export default function StationInfo(props) {
     fetch(url_journeys)
       .then(response => response.json())
       .then(data => {
-        setJourneys(data);
+        setJourneys(data.content);
       }
       )
       .catch(err => console.log(err));

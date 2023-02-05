@@ -16,19 +16,13 @@ function GMaps(props) {
     position: 'relative'
   };
 
- // const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+  const API_KEY = process.env.REACT_APP_API_KEY;
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: {API_KEY},
+    googleMapsApiKey: API_KEY
   });
-  //console.log("API", API_KEY)
+
   
-console.log("data")
- console.log(data)
-
-
-
-
    return (  
   
     isLoaded && <GoogleMap  mapContainerStyle={containerStyle} zoom={10} center={{lat: 60.2417, lng: 24.8854}} mapContainerClassName="map-container">                

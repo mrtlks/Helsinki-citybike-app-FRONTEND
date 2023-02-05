@@ -10,6 +10,9 @@ import UserExperiences from "./UserExperiences/UserExperiences";
 
 function App() {
 
+ 
+  console.log(process.env.REACT_APP_API_KEY)
+
   return (
     <BrowserRouter>
       <ResponsiveAppBar />

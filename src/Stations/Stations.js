@@ -16,7 +16,7 @@ export default function Stations() {
 
   useEffect(() => fetchData(), []);
 
-  const url = 'http://localhost:8080/api/stations'
+  const url = 'http://localhost:8080/api/allstations'
   //cors -ongelma(access-to-fetch-at-from-origin--has-been-blocked-by-cors)
   //--> lisää @CrossOrigin backendin controlleriin
 
@@ -25,11 +25,11 @@ export default function Stations() {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        setStations(data.content);
-      }
+        setStations(data);
+     }
       )
       .catch(err => console.log(err));
-  }
+    }
 // 2. JÄRJESTÄMINEN ----tämä laittaa asemat järjestykseen aseman nimen perusteella___________________
 
 stations.sort((a, b) => (a.name > b.name) ? 1 : -1)
