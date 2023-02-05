@@ -105,7 +105,7 @@ export default function StationInfo(props) {
 
 
           {isLoaded && <GoogleMap
-          //  googleMapsApiKey="xxxxxxxxxxxxxxxxxxx"
+            googleMapsApiKey="API_KEY"
             mapContainerStyle={containerStyle}
             center={{ lat: Number(station.y), lng: Number(station.x) }}
             zoom={14}
