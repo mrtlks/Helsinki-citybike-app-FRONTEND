@@ -15,7 +15,7 @@ export default function StationInfo(props) {
 
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: 'AIzaSyCe9oQB1rKkat68AvLrvgqQ1K4c4Y7H14g',
+    googleMapsApiKey: 'API_KEY',
   });
 
   const containerStyle = {
