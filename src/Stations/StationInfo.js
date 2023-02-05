@@ -13,9 +13,10 @@ export default function StationInfo(props) {
   const [journeys, setJourneys] = useState([]);
   const url_journeys = 'https://helsinki-city-bike-app-backend.herokuapp.com/api/journeys'
 
+  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: 'API_KEY',
+    googleMapsApiKey: {API_KEY},
   });
 
   const containerStyle = {
@@ -105,7 +106,7 @@ export default function StationInfo(props) {
 
 
           {isLoaded && <GoogleMap
-            googleMapsApiKey="API_KEY"
+            googleMapsApiKey= {API_KEY}
             mapContainerStyle={containerStyle}
             center={{ lat: Number(station.y), lng: Number(station.x) }}
             zoom={14}
