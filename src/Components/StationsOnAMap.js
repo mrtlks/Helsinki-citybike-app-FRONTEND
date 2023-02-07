@@ -17,7 +17,7 @@ export default function StationsOnAMap(props) {
     useEffect(() => fetchData(), []);
 
   //const url = 'http://localhost:8080/stations'
-     const url= 'https://helsinki-city-bike-app-backend.herokuapp.com/api/stations'
+     const url= 'https://helsinki-city-bike-app-backend.herokuapp.com/api/allstations'
 
 //cors -ongelma(access-to-fetch-at-from-origin--has-been-blocked-by-cors)
 //--> lisää @CrossOrigin backendin controlleriin
