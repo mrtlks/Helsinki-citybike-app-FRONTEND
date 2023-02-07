@@ -83,16 +83,19 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
+
+        {/*     <CardActionArea component={Link} to={`/${address}`} > */}
+
               <MenuItem component={Link} to='/' onClick={handleCloseNavMenu}>
                 <Typography textAlign="center"> Citybike </Typography>
               </MenuItem>
-              <MenuItem component={Link} to='/stations' onClick={handleCloseNavMenu}>
+              <MenuItem component={Link} to={`/stations`} onClick={handleCloseNavMenu}>
                 <Typography textAlign="center"> Stations </Typography>
               </MenuItem>
-              <MenuItem component={Link} to='/journeys' onClick={handleCloseNavMenu}>
+              <MenuItem component={Link} to={`/journeys`} onClick={handleCloseNavMenu}>
                 <Typography textAlign="center"> Journeys </Typography>
               </MenuItem>
-              <MenuItem component={Link} to='/userexperiences' onClick={handleCloseNavMenu}>
+              <MenuItem component={Link} to={`/userexperiences`} onClick={handleCloseNavMenu}>
                 <Typography textAlign="center"> User Experiences </Typography>
               </MenuItem>
             </Menu>
