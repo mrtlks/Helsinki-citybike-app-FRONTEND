@@ -50,7 +50,7 @@ export default function Frontpage() {
     },
     {
       title: 'Maps',
-      link: '/',
+      link: '',
       description:
         'Check out all the maps',
       image: image4,
@@ -60,7 +60,7 @@ export default function Frontpage() {
 
   const stationsOnAMap = {
     title: 'All Stations on a map. Make your search!',
-    link: 'userexperiences',
+   
     description:
       "Check out all available HSL citybike stations and plan your cycling route! Using a bike could not be easier.",
     image: 'https://source.unsplash.com/random/?bike',
@@ -84,13 +84,10 @@ export default function Frontpage() {
 
 
         {/* Footerin tekstit --> */}
-
         <Footer
           title="Helsinki City Bike app"
           description="Offering city bike info since 2023"
         />
-
-
 
 
       </main>

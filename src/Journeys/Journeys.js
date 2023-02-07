@@ -31,7 +31,7 @@ export default function Journeys() {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        setJourneys(data.content);
+        setJourneys(data);
       }
       )
       .catch(err => console.log(err));  
@@ -128,9 +128,6 @@ export default function Journeys() {
     return setJourneys(sortedJourneys);
   }
 
-  console.log('testi2')
-  console.log(journeys)
-
 
   return (
     <div>
@@ -141,8 +138,8 @@ export default function Journeys() {
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell onClick={sortByDepartureStation}> Departure Station</StyledTableCell>
-              <StyledTableCell onClick={sortByReturnStation} align="right">Return Station</StyledTableCell>
+              <StyledTableCell onClick={sortByDepartureStation} style={{cursor:'pointer'}}> Departure Station</StyledTableCell>
+              <StyledTableCell onClick={sortByReturnStation} style={{cursor:'pointer'}} align="right">Return Station</StyledTableCell>
               <StyledTableCell align="right">Covered distance
                 <Select sx={{
                   height: '2.5rem',
@@ -154,7 +151,7 @@ export default function Journeys() {
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                 >
-                  <MenuItem onClick={shortestDistance}>Longest</MenuItem>
+                  <MenuItem onClick={shortestDistance} >Longest</MenuItem>
                   <MenuItem onClick={longestDistance} >Shortest</MenuItem>
                 </Select>
               </StyledTableCell>

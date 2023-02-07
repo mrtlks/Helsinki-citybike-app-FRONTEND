@@ -27,7 +27,7 @@ export default function StationsOnAMap(props) {
         fetch(url) 
         .then(response => response.json())      
         .then(data => {   
-            setStations(data.content);
+            setStations(data);
         }
             )
         .catch(err=>console.log(err));  

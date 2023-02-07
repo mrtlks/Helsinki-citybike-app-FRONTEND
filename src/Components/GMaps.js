@@ -47,8 +47,8 @@ function GMaps(props) {
             setSelectedMarker (null);
         }}
     >
-        <div><b>{selectedMarker.station_name}</b> <br/>
-        {selectedMarker.station_address}
+        <div><b>{selectedMarker.name}</b> <br/>
+        {selectedMarker.address}
         </div>
     
     </InfoWindowF>
