@@ -10,13 +10,8 @@ import UserExperiences from "./UserExperiences/UserExperiences";
 function App() {
 
   return (
-<<<<<<< HEAD
+
     <BrowserRouter basename ="/#"> 
-      console.log(basename)
-=======
-    <BrowserRouter basename ={process.env.PUBLIC_URL}> 
-    console.log(basename)
->>>>>>> 6c467bc1f04f460acea70b019f8d4df937036a47
       <ResponsiveAppBar />
       <Routes >
         <Route path="/" exact element={<FrontPage />} />
