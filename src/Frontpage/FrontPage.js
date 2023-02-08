@@ -16,9 +16,9 @@ export default function Frontpage() {
 
 
   const frontpageMainInfo = {
-    title: 'Welcome to CityBikeInfo!',
+    title: 'Welcome to CityBike!',
     description:
-      "Here you can find detailed information about HSL city bike stations. In addition to this, you can view the traveled distances and add your own.",
+      "Here you can find detailed information about HSL city bike stations. In addition to this, you can view the travelled distances.",
     image: image1,
     imageText: 'main image description',
   };
@@ -44,7 +44,7 @@ export default function Frontpage() {
       title: 'User Experiences',
       link: 'userexperiences',
       description:
-        'Read user experiences and reviews.',
+        'Read user experiences and reviews and give your own.',
       image: image3,
       imageLabel: 'Image Text',
     },
