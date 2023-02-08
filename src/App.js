@@ -11,6 +11,7 @@ function App() {
 
   return (
     <BrowserRouter basename ={process.env.PUBLIC_URL}> 
+    console.log(basename)
       <ResponsiveAppBar />
       <Routes >
         <Route path="/" exact element={<FrontPage />} />
