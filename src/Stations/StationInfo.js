@@ -26,7 +26,7 @@ export default function StationInfo(props) {
     height: '400px'
   };
 
-  useEffect(() => fetchData(), [],);
+  useEffect(() => fetchData(), []);
 
 
   // haetaan kaikki matkat ----------tämä koodi noutaa datan ---------
