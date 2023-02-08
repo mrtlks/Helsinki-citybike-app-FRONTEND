@@ -10,13 +10,14 @@ import UserExperiences from "./UserExperiences/UserExperiences";
 function App() {
 
   return (
-    <BrowserRouter basename ={process.env.PUBLIC_URL}> 
+    <BrowserRouter basename ="/#"> 
+      console.log(basename)
       <ResponsiveAppBar />
       <Routes >
         <Route path="/" exact element={<FrontPage />} />
-        <Route path="/stations" exact element={<Stations />} />
-          <Route path="/journeys" exact element={<Journeys />} />
-          <Route path="/userexperiences" exact element={<UserExperiences />} />     
+        <Route path={`/stations`} exact element={<Stations />} />
+          <Route path={`/journeys`} exact element={<Journeys />} />
+          <Route path={`/userexperiences`} exact element={<UserExperiences />} />     
       </Routes>
     </BrowserRouter>
   );
