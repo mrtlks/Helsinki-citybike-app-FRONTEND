@@ -35,7 +35,7 @@ export default function Journeys() {
         setJourneys(data);
       })
       .catch(err => console.log(err));  
-  },[]);
+  }
 
   
   // Journeys-datan esittämiseen käytetään react mui:n kustomoitua taulukkoa (Table) _____________
