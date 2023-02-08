@@ -28,7 +28,7 @@ export default function Frontpage() {
       title: 'Stations',
       link: 'stations',
       description:
-        'Detailed information about HSL city bike stations including names and locations',
+        'Detailed information about HSL city bike stations including names and locations.',
       image: image1,
       imageLabel: 'Image Text',
     },
@@ -36,7 +36,7 @@ export default function Frontpage() {
       title: 'Journeys',
       link: 'journeys',
       description:
-        'Journey data',
+        'Journey data.',
       image: image2,
       imageLabel: 'Image Text',
     },
@@ -52,7 +52,7 @@ export default function Frontpage() {
       title: 'Maps',
       link: '',
       description:
-        'Check out all the maps',
+        'Check out all the maps.',
       image: image4,
       imageLabel: 'Image Text',
     },
