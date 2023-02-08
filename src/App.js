@@ -11,7 +11,7 @@ function App() {
 
   return (
 
-    <BrowserRouter basename ="/#"> 
+    <BrowserRouter > 
       <ResponsiveAppBar />
       <Routes >
         <Route path="/" exact element={<FrontPage />} />
