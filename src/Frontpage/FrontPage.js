@@ -6,6 +6,7 @@ import InfoBox from './InfoBox';
 import Footer from '../Components/Footer';
 import StationsOnAMap from '../Components/StationsOnAMap';
 
+
 export default function Frontpage() {
 
   const image1 = require('./images/station.jpg');
@@ -21,7 +22,6 @@ export default function Frontpage() {
     image: image1,
     imageText: 'main image description',
   };
-
 
   const infoBoxes = [
     {
@@ -80,8 +80,9 @@ export default function Frontpage() {
           ))}
         </Grid>
 
-        <StationsOnAMap info={stationsOnAMap} />
-
+        
+        <StationsOnAMap info={stationsOnAMap} />      
+        
 
         {/* Footerin tekstit --> */}
         <Footer

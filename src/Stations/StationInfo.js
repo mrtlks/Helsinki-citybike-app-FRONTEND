@@ -12,7 +12,7 @@ export default function StationInfo(props) {
   const [open, setOpen] = useState(false)
   const [journeys, setJourneys] = useState([]);
   //const url_journeys = 'http://localhost:8080/api/journeys'
-  const url_journeys= 'https://helsinki-city-bike-app-backend.herokuapp.com/api/journeys'
+  const url_journeys= 'https://helsinki-city-bike-app-backend.herokuapp.com/api/alljourneys'
 
 
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -26,7 +26,7 @@ export default function StationInfo(props) {
     height: '400px'
   };
 
-  useEffect(() => fetchData(), [],);
+  useEffect(() => fetchData(), []);
 
 
   // haetaan kaikki matkat ----------tämä koodi noutaa datan ---------
@@ -34,7 +34,7 @@ export default function StationInfo(props) {
     fetch(url_journeys)
       .then(response => response.json())
       .then(data => {
-        setJourneys(data.content);
+        setJourneys(data);
       }
       )
       .catch(err => console.log(err));
@@ -98,7 +98,7 @@ export default function StationInfo(props) {
             Address: <br />
             <b> {station.address}</b><br /> <br />
             Coordinates:<br />
-            <b>x:  {station.x} </b>  <br />
+            <b>x: {station.x} </b>  <br />
             <b>y: {station.y} </b>  <br /> <br />
             <li> Total number of journeys starting from the station:  <b>  {departureStation_amount} </b>  </li>
             <li>  Total number of journeys ending at the station:  <b>  {returnStation_amount}  </b></li>  <br />
