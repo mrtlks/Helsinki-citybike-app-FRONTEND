@@ -28,12 +28,12 @@ export default function Journeys() {
 
   // haetaan kaikki asemat ----------tämä koodi noutaa datan ---------
   const fetchData = () => {
+    console.log('test for loop, shoud see this only once')
     fetch(url)
       .then(response => response.json())
       .then(data => {
         setJourneys(data);
-      }
-      )
+      })
       .catch(err => console.log(err));  
   }
 
