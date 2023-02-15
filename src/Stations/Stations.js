@@ -24,6 +24,7 @@ export default function Stations() {
 
   // 1.  haetaan kaikki asemat ----------tämä koodi noutaa datan ---------
   const fetchData = () => {
+    console.log('test for fetch stations -loop, shoud see this only once')
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -112,6 +113,7 @@ return (
           <Grid
             item key={i}>
             <Item>
+              
           <StationInfo station={station}/>
 
             </Item>

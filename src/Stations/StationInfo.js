@@ -25,12 +25,13 @@ export default function StationInfo(props) {
     width: '400px',
     height: '400px'
   };
-
-  useEffect(() => fetchData(), []);
+//----------------TÄMÄ AIHEUTTAA 400 turhaa queryä kun stations-sivu päivitetään? vai onko syy stationissa?-> jokainen listan itemi aiheuttaa satoja hakuja------------------------------------
+  // useEffect(() => fetchData(), []);
 
 
   // haetaan kaikki matkat ----------tämä koodi noutaa datan ---------
   const fetchData = () => {
+    console.log('test for fetch station_info -loop (journeys), shoud see this only once')
     fetch(url_journeys)
       .then(response => response.json())
       .then(data => {
@@ -66,6 +67,7 @@ export default function StationInfo(props) {
   // avataan ikkuna  ------------------------------------
   const showInfo = () => {
     setOpen(true)
+    fetchData()
   }
 
   // suljetaan ikkuna
