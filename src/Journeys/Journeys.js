@@ -20,7 +20,7 @@ export default function Journeys() {
 
   const [journeys, setJourneys] = useState([]);
   //const url = 'http://localhost:8080/api/journeys'
-  const url = 'https://helsinki-city-bike-app-backend.herokuapp.com/api/alljourneys'
+  const url = 'https://helsinki-citybike-app-backend-dp1j.onrender.com/api/alljourneys'
 
 
 

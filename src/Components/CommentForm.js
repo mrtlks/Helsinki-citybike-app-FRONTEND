@@ -30,7 +30,7 @@ function CommentForm() {
       stars: stars
     };
 
-    axios.post('https://helsinki-city-bike-app-backend.herokuapp.com/api/comments', obj)
+    axios.post('https://helsinki-citybike-app-backend-dp1j.onrender.com/api/comments', obj)
       .then(response => {
         console.log(response)
         console.log('success!')

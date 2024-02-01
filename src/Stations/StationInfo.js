@@ -12,7 +12,7 @@ export default function StationInfo(props) {
   const [open, setOpen] = useState(false)
   const [journeys, setJourneys] = useState([]);
   //const url_journeys = 'http://localhost:8080/api/journeys'
-  const url_journeys= 'https://helsinki-city-bike-app-backend.herokuapp.com/api/alljourneys'
+  const url_journeys= 'https://helsinki-citybike-app-backend-dp1j.onrender.com/api/alljourneys'
 
 
   const API_KEY = process.env.REACT_APP_API_KEY;
