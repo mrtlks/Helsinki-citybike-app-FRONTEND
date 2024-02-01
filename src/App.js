@@ -10,7 +10,8 @@ import UserExperiences from "./UserExperiences/UserExperiences";
 function App() {
 
   return (
-    <HashRouter > 
+    <HashRouter basename ={process.env.PUBLIC_URL}> 
+      console.log(basename)
       <ResponsiveAppBar />
       <Routes >
         <Route path="/" exact element={<FrontPage />} />
