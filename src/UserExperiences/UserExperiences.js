@@ -26,7 +26,7 @@ export default function UserExperiences() {
 
   useEffect(() => fetchData(), []);
 
-  const url = 'https://helsinki-citybike-app-backend-dp1j.onrender.com/api/comments'
+  const url = 'http://citybikebackend.eu-north-1.elasticbeanstalk.com/api/comments'
 
   const fetchData = () => {
     fetch(url)

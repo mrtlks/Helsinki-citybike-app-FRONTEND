@@ -17,7 +17,7 @@ export default function StationsOnAMap(props) {
     useEffect(() => fetchData(), []);
 
   //const url = 'http://localhost:8080/stations'
-     const url= 'https://helsinki-citybike-app-backend-dp1j.onrender.com/api/allstations'
+     const url= 'http://citybikebackend.eu-north-1.elasticbeanstalk.com/api/allstations'
 
 //cors -ongelma(access-to-fetch-at-from-origin--has-been-blocked-by-cors)
 //--> lisää @CrossOrigin backendin controlleriin
