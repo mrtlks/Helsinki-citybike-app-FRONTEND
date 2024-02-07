@@ -37,7 +37,7 @@ export default function Stations() {
 
 stations.sort((a, b) => (a.name > b.name) ? 1 : -1)
 
-
+console.log("moikka")
 // 3. HAKUTOIMINTO joka filteröi asemat ______________________________________________________________
 
 // 3.a  Käyttäjä syöttää hakukenttään merkkejä. 
