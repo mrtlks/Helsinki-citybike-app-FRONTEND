@@ -16,7 +16,7 @@ export default function Frontpage() {
 
 
   const frontpageMainInfo = {
-    title: 'Welcome to CityBike!',
+    title: 'Welcome to Helsinki CityBike!',
     description:
       "Here you can find detailed information about HSL city bike stations. In addition to this, you can view the travelled distances.",
     image: image1,
