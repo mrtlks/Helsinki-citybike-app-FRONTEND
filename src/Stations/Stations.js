@@ -17,7 +17,7 @@ export default function Stations() {
   useEffect(() => fetchData(), []);
 
  //const url = 'http://localhost:8080/api/allstations'
-  const url= 'http://citybikebackend.eu-north-1.elasticbeanstalk.com/api/allstations'
+  const url= 'https://citybikebackend.eu-north-1.elasticbeanstalk.com/api/allstations'
   
  //cors -ongelma(access-to-fetch-at-from-origin--has-been-blocked-by-cors)
   //--> lisää @CrossOrigin backendin controlleriin
@@ -37,7 +37,7 @@ export default function Stations() {
 
 stations.sort((a, b) => (a.name > b.name) ? 1 : -1)
 
-console.log("moikka")
+
 // 3. HAKUTOIMINTO joka filteröi asemat ______________________________________________________________
 
 // 3.a  Käyttäjä syöttää hakukenttään merkkejä. 
