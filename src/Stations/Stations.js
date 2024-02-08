@@ -24,37 +24,11 @@ export default function Stations() {
 
   // 1.  haetaan kaikki asemat ----------tämä koodi noutaa datan ---------
 
-  const fetchData = () => {
-  fetch(url, {
-    method: 'GET', // or 'POST', 'PUT', etc. depending on your API
-    headers: {
-      'Content-Type': 'application/json',
-      // Add any additional headers if needed
-    },
-    // Include credentials: 'include' if your backend API requires credentials (cookies, HTTP authentication)
-    // credentials: 'include',
-  })
-  .then(response => {
-    // Check if response status is in the range 200-299
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    // Parse response body as JSON
-    return response.json();
-  })
-  .then(data => {
-    // Process the JSON data
-    setStations(data);
-  })
-  .catch(err => {
-    // Handle fetch errors
-    console.error('Error fetching data:', err);
-  });
-};
-
- /* const fetchData = () => {
+ const fetchData = () => {
     console.log('test for fetch stations -loop, shoud see this only once')
-    fetch(url)
+    fetch(url
+      , {mode: 'no-cors'}     
+      )
       .then(response => response.json())
       .then(data => {
         setStations(data);
@@ -62,7 +36,7 @@ export default function Stations() {
       )
       .catch(err => console.log(err));
     }
-*/
+
 
 
 // 2. JÄRJESTÄMINEN ----tämä laittaa asemat järjestykseen aseman nimen perusteella___________________
