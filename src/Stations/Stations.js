@@ -17,7 +17,7 @@ export default function Stations() {
   useEffect(() => fetchData(), []);
 
  //const url = 'http://localhost:8080/api/allstations'
-  const url= 'http://citybikebackend.eu-north-1.elasticbeanstalk.com/api/allstations'
+  const url= 'https://admin.helsinkicitybikeadmin.net/api/allstations'
   
  //cors -ongelma(access-to-fetch-at-from-origin--has-been-blocked-by-cors)
   //--> lisää @CrossOrigin backendin controlleriin
