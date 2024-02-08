@@ -17,13 +17,42 @@ export default function Stations() {
   useEffect(() => fetchData(), []);
 
  //const url = 'http://localhost:8080/api/allstations'
-  const url= 'https://citybikebackend.eu-north-1.elasticbeanstalk.com/api/allstations'
+  const url= 'http://citybikebackend.eu-north-1.elasticbeanstalk.com/api/allstations'
   
  //cors -ongelma(access-to-fetch-at-from-origin--has-been-blocked-by-cors)
   //--> lisää @CrossOrigin backendin controlleriin
 
   // 1.  haetaan kaikki asemat ----------tämä koodi noutaa datan ---------
+
   const fetchData = () => {
+  fetch(url, {
+    method: 'GET', // or 'POST', 'PUT', etc. depending on your API
+    headers: {
+      'Content-Type': 'application/json',
+      // Add any additional headers if needed
+    },
+    // Include credentials: 'include' if your backend API requires credentials (cookies, HTTP authentication)
+    // credentials: 'include',
+  })
+  .then(response => {
+    // Check if response status is in the range 200-299
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    // Parse response body as JSON
+    return response.json();
+  })
+  .then(data => {
+    // Process the JSON data
+    setStations(data);
+  })
+  .catch(err => {
+    // Handle fetch errors
+    console.error('Error fetching data:', err);
+  });
+};
+
+ /* const fetchData = () => {
     console.log('test for fetch stations -loop, shoud see this only once')
     fetch(url)
       .then(response => response.json())
@@ -33,6 +62,9 @@ export default function Stations() {
       )
       .catch(err => console.log(err));
     }
+*/
+
+
 // 2. JÄRJESTÄMINEN ----tämä laittaa asemat järjestykseen aseman nimen perusteella___________________
 
 stations.sort((a, b) => (a.name > b.name) ? 1 : -1)
