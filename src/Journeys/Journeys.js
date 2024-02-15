@@ -19,8 +19,8 @@ export default function Journeys() {
 
 
   const [journeys, setJourneys] = useState([]);
-  //const url = 'http://localhost:8080/api/journeys'
-  const url = 'http://citybikebackend.eu-north-1.elasticbeanstalk.com/api/alljourneys'
+//const url = 'http://localhost:8080/api/journeys'
+  const url = 'http://admin.helsinkicitybikeadmin.net/api/alljourneys'
 
 
 

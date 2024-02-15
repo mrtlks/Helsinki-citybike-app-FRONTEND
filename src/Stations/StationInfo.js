@@ -12,7 +12,7 @@ export default function StationInfo(props) {
   const [open, setOpen] = useState(false)
   const [journeys, setJourneys] = useState([]);
   //const url_journeys = 'http://localhost:8080/api/journeys'
-  const url_journeys= 'http://citybikebackend.eu-north-1.elasticbeanstalk.com/api/alljourneys'
+  const url_journeys= 'http://admin.helsinkicitybikeadmin.net/api/alljourneys'
 
 
   const API_KEY = process.env.REACT_APP_API_KEY;

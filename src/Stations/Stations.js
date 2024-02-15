@@ -26,9 +26,7 @@ export default function Stations() {
 
  const fetchData = () => {
     console.log('test for fetch stations -loop, shoud see this only once')
-    fetch(url
-      , {mode: 'no-cors'}     
-      )
+    fetch(url)
       .then(response => response.json())
       .then(data => {
         setStations(data);
