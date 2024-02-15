@@ -30,7 +30,7 @@ function CommentForm() {
       stars: stars
     };
 
-    axios.post('http://citybikebackend.eu-north-1.elasticbeanstalk.com/api/comments', obj)
+    axios.post('https://admin.helsinkicitybikeadmin.net/api/comments', obj)
       .then(response => {
         console.log(response)
         console.log('success!')

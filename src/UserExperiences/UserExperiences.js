@@ -19,7 +19,7 @@ export default function UserExperiences() {
   const secondaryPagesInfo = {
     title: 'User Experiences - Share Yours!',
     description:
-      "Give a comment about your experience with Helsinki City Bike",
+      "Give a comment about your experience with Helsinki CityBike",
     image: 'https://source.unsplash.com/random/?citybike',
   };
 
@@ -29,6 +29,7 @@ export default function UserExperiences() {
   const url = 'https://admin.helsinkicitybikeadmin.net/api/comments'
 
   const fetchData = () => {
+    console.log('test for fetch comments -loop, shoud see this only once')
     fetch(url)
       .then(response => response.json())
       .then(data => {
