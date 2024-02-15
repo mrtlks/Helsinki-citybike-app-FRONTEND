@@ -127,8 +127,8 @@ return (
     </Pagination>
 
     <Footer
-      title="Helsinki City Bike app"
-      description="Offering city bike info since 2023"
+      title="Helsinki CityBike app"
+      description="Offering CityBike info since 2023"
     />
 
   </div>
