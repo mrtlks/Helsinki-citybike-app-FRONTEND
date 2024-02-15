@@ -49,7 +49,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            Citybike
+            CityBike
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -87,7 +87,7 @@ function ResponsiveAppBar() {
         {/*     <CardActionArea component={Link} to={`/${address}`} > */}
 
               <MenuItem component={Link} to='/' onClick={handleCloseNavMenu}>
-                <Typography textAlign="center"> Citybike </Typography>
+                <Typography textAlign="center"> CityBike </Typography>
               </MenuItem>
               <MenuItem component={Link} to={`/stations`} onClick={handleCloseNavMenu}>
                 <Typography textAlign="center"> Stations </Typography>

@@ -86,11 +86,9 @@ export default function Frontpage() {
 
         {/* Footerin tekstit --> */}
         <Footer
-          title="Helsinki City Bike app"
+          title="Helsinki CityBike app"
           description="Offering city bike info since 2023"
         />
-
-
       </main>
     </Container>
 
