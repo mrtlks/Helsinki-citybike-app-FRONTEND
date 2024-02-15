@@ -20,10 +20,10 @@ export default function Journeys() {
 
   const [journeys, setJourneys] = useState([]);
 //const url = 'http://localhost:8080/api/journeys'
-  const url = 'https://admin.helsinkicitybikeadmin.net/api/alljourneys'
+// const url = 'https://admin.helsinkicitybikeadmin.net/api/alljourneys'
 //url sisältää kaiken datan (ei vielä sivutettu)
   const testing_url = 'https://admin.helsinkicitybikeadmin.net/api/journeys'
-// testing_url api sisältää demodatan (appi ei kaadu datan määrästä)
+// testing_url api sisältää demodatan (appi ei kaadu datan määrästä) muista poistaa content --> data.content
 
   useEffect(() => fetchData(), []);
 
@@ -33,7 +33,7 @@ export default function Journeys() {
     fetch(testing_url)
       .then(response => response.json())
       .then(data => {
-        setJourneys(data);
+        setJourneys(data.content);
       })
       .catch(err => console.log(err));  
   }
