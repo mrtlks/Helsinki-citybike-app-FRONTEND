@@ -21,15 +21,16 @@ export default function Journeys() {
   const [journeys, setJourneys] = useState([]);
 //const url = 'http://localhost:8080/api/journeys'
   const url = 'https://admin.helsinkicitybikeadmin.net/api/alljourneys'
-
-
+//url sisältää kaiken datan (ei vielä sivutettu)
+  const testing_url = 'https://admin.helsinkicitybikeadmin.net/api/journeys'
+// testing_url api sisältää demodatan (appi ei kaadu datan määrästä)
 
   useEffect(() => fetchData(), []);
 
   // haetaan kaikki asemat ----------tämä koodi noutaa datan ---------
   const fetchData = () => {
     console.log('test for fetch journeys -loop, shoud see this only once')
-    fetch(url)
+    fetch(testing_url)
       .then(response => response.json())
       .then(data => {
         setJourneys(data);
